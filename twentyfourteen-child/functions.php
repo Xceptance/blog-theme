@@ -99,4 +99,23 @@ function custom_theme_mod( $value ) {
 	else { 
 		return $value; } 
 	} add_filter( 'theme_mod_featured_content_layout', 'custom_theme_mod' );
+
+
+/**
+ * Register and enqueue a script that does not depend on a JavaScript library.
+ */
+function cookie_js() {
+    wp_register_script(
+        'jquery-cookie',
+        get_stylesheet_directory_uri() . '/js/jquery.cookie-1.4.1.min.js',
+        array('jquery'),
+        '1.4.1',
+        false
+    );
+
+    wp_enqueue_script( 'jquery-cookie' );
+}
+add_action( 'wp_enqueue_scripts', 'cookie_js' );
+
+
 ?>

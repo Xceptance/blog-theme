@@ -17,14 +17,16 @@
 			<?php get_sidebar( 'footer' ); ?>
 			
 			<div class="site-info">
-				<span>Copyright <a id="Xceptance-link" href="https://www.xceptance.com">Xceptance</a> 2015</span>
+				<span>Copyright <a id="Xceptance-link" href="https://www.xceptance.com/">Xceptance</a> 2015</span>
 				<?php do_action( 'twentyfourteen_credits' ); ?>
 				<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'twentyfourteen' ) ); ?>"><?php printf( __( '–Proudly powered by %s', 'twentyfourteen' ), 'WordPress' ); ?></a>
 			</div><!-- .site-info -->
 		</footer><!-- #colophon -->
 	</div><!-- #page -->
 
+
 	<?php wp_footer(); ?>
+
 
     <div id="privacy-message" style="display: none;">
 	    <div id="inner" class="alert alert-info">
@@ -32,8 +34,8 @@
             By clicking <em>Opt-Out</em>, we will place a non-personalized cookie on your machine that indicates that you don‘t wish to be tracked.</p>
 		
             <p class="text-right">
-			    <button type="button" class="btn-link" onclick="$.cookie('privacy', 'true', { expires: 7, path: '/' }); $('#privacy-message').hide();">Opt-Out</button>
-                <button type="button" class="btn btn-primary" onclick="$('#privacy-message').hide(); reportAnalytics();">I understand</button>
+			    <button type="button" class="btn-link" onclick="jQuery.cookie('privacy', 'true', { expires: 7, path: '/' }); jQuery('#privacy-message').hide();">Opt-Out</button>
+                <button type="button" class="btn btn-primary" onclick="jQuery('#privacy-message').hide(); reportAnalytics();">I understand</button>
 		    </p>
 	    </div>
     </div>
@@ -49,7 +51,7 @@
 
       function reportAnalytics() {
             // sent this only, if the user did not opt-out and he has seen the privacy message once at least
-            if ( ($.cookie('privacy-ack-displayed') == 'true') && ($.cookie('privacy') == undefined) ) {
+            if ( (jQuery.cookie('privacy-ack-displayed') == 'true') && (jQuery.cookie('privacy') == undefined) ) {
                 var u=(("https:" == document.location.protocol) ? "https" : "http") + "://stats.xceptance.com/";
                 _paq.push(["setTrackerUrl", u+"piwik.php"]);
                 _paq.push(["setSiteId", "3"]);
@@ -67,9 +69,9 @@
         // users wish
         var isDNT = navigator.doNotTrack == "yes" || navigator.doNotTrack == "1" || navigator.msDoNotTrack == "1";
         
-        if ($.cookie('privacy-ack-displayed') == undefined && !isDNT) { 
-            $('#privacy-message').show();
-            $.cookie('privacy-ack-displayed', 'true', { expires: 7, path: '/' });
+        if (jQuery.cookie('privacy-ack-displayed') == undefined && !isDNT) { 
+            jQuery('#privacy-message').show();
+            jQuery.cookie('privacy-ack-displayed', 'true', { expires: 7, path: '/' });
         }
     </script>
 
