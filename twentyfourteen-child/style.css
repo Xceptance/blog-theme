@@ -807,3 +807,42 @@ span.phone:before {
 .syntaxhighlighter table td.code .line {
 	padding: 10px !important;
 }
+
+/************ privacy message ************/
+#privacy-message {
+    position: fixed;
+    z-index: 100;
+    bottom: 0px;
+
+    margin: 0;
+    left: 0px;
+
+    padding: 0em 10% 0em 10%;
+}
+
+#privacy-message #inner {
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
+}
+
+.alert-info {
+    border-radius: 0px;
+    margin-bottom: 0px;
+}
+.alert-info {
+    background-color: #D9EDF7;
+    border-color: #BCE8F1;
+    color: #31708F;
+}
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.alert .text-right {
+    text-align: right;
+    margin-bottom: 0px;
+}
+
