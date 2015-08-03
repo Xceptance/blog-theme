@@ -69,7 +69,7 @@ function theme_enqueue_styles() {
 /* Remove Google Lato */
 
 function mytheme_dequeue_fonts() {
-	wp_dequeue_style( 'twentyfourteen-fonts' );
+	wp_dequeue_style( 'twentyfourteen-lato' );
 }
 add_action( 'wp_enqueue_scripts', 'mytheme_dequeue_fonts', 11 );
 
