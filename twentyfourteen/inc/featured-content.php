@@ -230,6 +230,8 @@ class Featured_Content {
 	 */
 	public static function pre_get_posts( $query ) {
 
+        return; // change by Rene, because the setting in the UI does not seem to work
+    
 		// Bail if not home or not main query.
 		if ( ! $query->is_home() || ! $query->is_main_query() ) {
 			return;

@@ -1,4 +1,6 @@
 <?php
+
+
 function twentyfourteen_setup() {
 
 	/*
